@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 echo "JF Dotfile setup v. 1.0"
+echo "installing dependencies..."
+#
+which dnf && { sudo dnf install zsh -y;}
+which zypper && { echo "I have no idea how to install zsh on opensuse";}
+which apt-get && { sudo apt-get install zsh -y;}
+#
 echo "making backups to $HOME/.jfBackup"
 jf_user=$(whoami)
 if [ ! -f "$HOME/.jfBackup" ]; then
